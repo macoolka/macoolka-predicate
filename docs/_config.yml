@@ -5,7 +5,7 @@ remote_theme: pmarsceill/just-the-docs
     
     # Aux links for the upper right navigation
     aux_links:
-      'mocoolka-predicate on GitHub':
-        - 'https://github.com/mocoolka/mocoolka-predicate'
+      'macoolka-predicate on GitHub':
+        - 'https://github.com/macoolka/macoolka-predicate'
     
 theme: jekyll-theme-cayman
