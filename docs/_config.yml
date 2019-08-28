@@ -8,3 +8,4 @@ remote_theme: pmarsceill/just-the-docs
       'mocoolka-predicate on GitHub':
         - 'https://github.com/mocoolka/mocoolka-predicate'
     
+theme: jekyll-theme-cayman
