@@ -3,20 +3,20 @@ Common Predicate Functions in TypeScript
 </p>
 
 <p align="center">
-  <a href="https://travis-ci.org/mocoolka/mocoolka-predicate">
-    <img src="https://img.shields.io/travis/mocoolka/mocoolka-predicate/master.svg?style=flat-square" alt="build status" height="20">
+  <a href="https://travis-ci.org/macoolka/macoolka-predicate">
+    <img src="https://img.shields.io/travis/macoolka/macoolka-predicate/master.svg?style=flat-square" alt="build status" height="20">
   </a>
-  <a href="https://david-dm.org/mocoolka-predicate">
-    <img src="https://img.shields.io/david/mocoolka/mocoolka-predicate.svg?style=flat-square" alt="dependency status" height="20">
+  <a href="https://david-dm.org/macoolka-predicate">
+    <img src="https://img.shields.io/david/macoolka/macoolka-predicate.svg?style=flat-square" alt="dependency status" height="20">
   </a>
-  <a href="https://www.npmjs.com/package/mocoolka-predicate">
-    <img src="https://img.shields.io/npm/dm/mocoolka-predicate.svg" alt="npm downloads" height="20">
+  <a href="https://www.npmjs.com/package/macoolka-predicate">
+    <img src="https://img.shields.io/npm/dm/macoolka-predicate.svg" alt="npm downloads" height="20">
   </a>
 </p>
 
 # Common Predicate Functions in TypeScript
 
-`mocoolka-predicate` is a library for common predicate with `type` and `string`.
+`macoolka-predicate` is a library for common predicate with `type` and `string`.
 
 
 **Table of contents**
@@ -32,22 +32,16 @@ Common Predicate Functions in TypeScript
 To install the stable version:
 
 ```
-npm install mocoolka-predicate
+npm install macoolka-predicate
 ```
 
 
 # Documentation
 
-- [Docs](https://mocoolka.github.io/mocoolka-predicate)
-- [Tutorial](https://gcanti.github.io/fp-ts/basics/)
-- [Ecosystem](https://gcanti.github.io/fp-ts/introduction/ecosystem)
-- API Reference
-  - [version 2.x (current)](https://mocoolka.github.io/mocoolka-predicate/modules/)
-  - [version 1.x](https://github.com/gcanti/fp-ts/tree/1.x/docs/modules/)
+- [Docs](https://macoolka.github.io/macoolka-predicate)
+- [API Reference](https://macoolka.github.io/macoolka-predicate/modules)
+- [API Reference (中文)](https://macoolka.github.io/macoolka-predicate/zh/modules)
 
-# Development
-
-- [Code conventions](https://gcanti.github.io/fp-ts/introduction/code-conventions)
 
 # License
 
