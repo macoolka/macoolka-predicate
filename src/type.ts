@@ -7,7 +7,7 @@
  */
 import { monoidAny, getFunctionMonoid, fold } from 'fp-ts/lib/Monoid'
 import { Predicate, not, Refinement } from 'fp-ts/lib/function'
-import { Maybe, AtLeastOne, NonEmptyArray } from 'mocoolka-typescript'
+import { Maybe, AtLeastOne, NonEmptyArray } from 'macoolka-typescript'
 import { Option } from 'fp-ts/lib/Option'
 
 export interface PredicateOption<A, B> {
@@ -23,7 +23,7 @@ const foldOr = fold(getFunctionMonoid(monoidAny)<any>())
  * @typezh
  * 得到类型的名字
  * @example
- * import {getTypeName} from 'mocoolka-predicate'
+ * import {getTypeName} from 'macoolka-predicate'
  * assert(getTypeName({})==='Object');
  * @param value
  * @since 0.2.0
@@ -49,7 +49,7 @@ export const getTypeName = (value: unknown): string => {
  * @desczh
  * 判断是否输入值为指定的类型名
  * @example
- * import { isTypeName } from 'mocoolka-predicate'
+ * import { isTypeName } from 'macoolka-predicate'
  * assert(isTypeName('Object')({}));
  * @since 0.2.0
  */
@@ -73,7 +73,7 @@ export const isArguments = isTypeName('Arguments')
  * @desczh
  * 判断是否输入值为`Array`
  * @example
- * import { isArray } from 'mocoolka-predicate'
+ * import { isArray } from 'macoolka-predicate'
  *
  * assert(isArray([]))
  * assert(!isArray({}))
@@ -85,7 +85,7 @@ export const isArray = <T>(a: unknown): a is Array<T> => getTypeName(a) === 'Arr
  * @desczh
  * 判断是否输入值为`ArrayLike`
  * @example
- * import { isArrayLike } from 'mocoolka-predicate'
+ * import { isArrayLike } from 'macoolka-predicate'
  * assert(isArrayLike([]))
  * assert(isArrayLike({ length: 8 }))
  * assert(!isArrayLike({}));
@@ -100,7 +100,7 @@ export const isArrayLike = (value: any) => value && typeof value.length === 'num
  * @desczh
  * 判断是否输入值为`Boolean`
  * @example
- * import { isBoolean } from 'mocoolka-predicate'
+ * import { isBoolean } from 'macoolka-predicate'
  * assert(isBoolean(true))
  * assert(!isBoolean(1))
  *
@@ -116,7 +116,7 @@ export const isBoolean: Refinement<unknown, boolean> =
  * @desczh
  * 判断是否输入值为`symbol`
  * @example
- * import { isSymbol } from 'mocoolka-predicate'
+ * import { isSymbol } from 'macoolka-predicate'
  * const a=Symbol('A')
  * assert(isSymbol(a))
  * assert(!isSymbol('b'))
@@ -130,7 +130,7 @@ export const isSymbol: Refinement<unknown, symbol> =
  * @desczh
  * 判断是否输入值为`Date`
  * @example
- * import { isDate } from 'mocoolka-predicate'
+ * import { isDate } from 'macoolka-predicate'
  * assert(isDate(new Date()))
  * assert(!isDate('a'))
  * @since 0.2.0
@@ -142,7 +142,7 @@ export const isDate: Refinement<unknown, Date> = (a: unknown): a is Date => 'Dat
  * @desczh
  * 判断是否输入值为`Empty`
  * @example
- * import { isEmpty } from 'mocoolka-predicate'
+ * import { isEmpty } from 'macoolka-predicate'
  * assert(isEmpty(''))
  * assert(isEmpty(undefined))
  * assert(isEmpty(null))
@@ -169,7 +169,7 @@ export function isEmpty<T>(val: Maybe<T>): val is (undefined | null) {
  * @desczh
  * 判断是否输入值为非空
  * @example
- * import { notEmpty } from 'mocoolka-predicate'
+ * import { notEmpty } from 'macoolka-predicate'
  * assert(!notEmpty(''))
  * assert(!notEmpty(undefined))
  * assert(!notEmpty(null))
@@ -188,7 +188,7 @@ export function notEmpty<T>(val: Maybe<T>): val is T {
  * @desczh
  * 判断是否输入值为`Empty Array`
  * @example
- * import { isEmptyArray } from 'mocoolka-predicate'
+ * import { isEmptyArray } from 'macoolka-predicate'
  * assert(isEmptyArray([]))
  * assert(isEmptyArray(undefined))
  * assert(isEmptyArray(null))
@@ -204,7 +204,7 @@ export const isEmptyArray = (val: unknown): boolean => {
  * @desczh
  * 判断是否输入值为`Non Empty Array`
  * @example
- * import { notEmptyArray } from 'mocoolka-predicate'
+ * import { notEmptyArray } from 'macoolka-predicate'
  * assert(!notEmptyArray([]))
  * assert(!notEmptyArray(undefined))
  * assert(!notEmptyArray(null))
@@ -218,7 +218,7 @@ export const notEmptyArray = <T>(val: unknown): val is NonEmptyArray<T> => isArr
  * @desczh
  * 判断是否输入值为`Empty Record`
  * @example
- * import { isEmptyRecord } from 'mocoolka-predicate'
+ * import { isEmptyRecord } from 'macoolka-predicate'
  * assert(isEmptyRecord({}))
  * assert(isEmptyRecord(undefined))
  * assert(isEmptyRecord(null))
@@ -235,7 +235,7 @@ export const isEmptyRecord = (val: unknown): boolean => {
  * @desczh
  * 判断是否输入值为`Non Empty Record`
  * @example
- * import { notEmptyRecord } from 'mocoolka-predicate'
+ * import { notEmptyRecord } from 'macoolka-predicate'
  * assert(!notEmptyRecord({}))
  * assert(!notEmptyRecord(undefined))
  * assert(!notEmptyRecord(null))
@@ -249,7 +249,7 @@ export const notEmptyRecord = <T>(val: Maybe<T>): val is AtLeastOne<T> => isObje
  * @desczh
  * 判断是否输入值为`Error`
  * @example
- * import { isError } from 'mocoolka-predicate'
+ * import { isError } from 'macoolka-predicate'
  * assert(isError(new Error('')))
  * assert(!isError(''))
  * @since 0.2.0
@@ -262,7 +262,7 @@ export const isError: Refinement<unknown, Error> =
  * @desczh
  * 判断是否输入值为`Finite`
  * @example
- * import { isFinite } from 'mocoolka-predicate'
+ * import { isFinite } from 'macoolka-predicate'
  * assert(isFinite(Number.MAX_VALUE))
  * assert(isFinite(Number.MIN_VALUE))
  * assert(isFinite('1'))
@@ -284,7 +284,7 @@ export const isFinite: Predicate<unknown> = (val) => {
  * @desczh
  * 判断是否输入值为`Function`
  * @example
- * import { isFunction } from 'mocoolka-predicate'
+ * import { isFunction } from 'macoolka-predicate'
  * assert(isFunction(() => void 0))
  * assert(!isFunction(1))
  * @since 0.2.0
@@ -297,7 +297,7 @@ export const isFunction: Refinement<unknown, Function> =
  * @desczh
  * 判断是否输入值为`Integer`
  * @example
- * import { isInteger } from 'mocoolka-predicate'
+ * import { isInteger } from 'macoolka-predicate'
  * assert(isInteger(1))
  * assert(!isInteger(1.1))
  * @since 0.2.0
@@ -309,7 +309,7 @@ export const isInteger: Predicate<unknown> = (val: unknown) => {
 const REAL_ITERATOR_SYMBOL = Symbol.iterator
 const getIterator = (iterable: any) => {
     const iteratorFn = notMaybe(iterable) &&
-        (iterable[REAL_ITERATOR_SYMBOL])
+        ((iterable)[REAL_ITERATOR_SYMBOL])
     if (typeof iteratorFn === 'function') {
         return iteratorFn
     }
@@ -319,7 +319,7 @@ const getIterator = (iterable: any) => {
  * @desczh
  * 判断是否输入值为`Iterable`
  * @example
- * import { isIterable } from 'mocoolka-predicate'
+ * import { isIterable } from 'macoolka-predicate'
  * assert(isIterable([]))
  * assert(!isIterable({}))
  * @since 0.2.0
@@ -334,7 +334,7 @@ export const isIterable: Refinement<unknown, Iterable<unknown>> =
  * @desczh
  * 判断是否输入值为`Iterator`
  * @example
- * import { isIterator } from 'mocoolka-predicate'
+ * import { isIterator } from 'macoolka-predicate'
  * assert(isIterator({ next: () => void 0 }))
  * assert(!isIterator({}))
  * @since 0.2.0
@@ -349,7 +349,7 @@ export const isIterator: Refinement<any, Iterator<unknown>> =
  * @desczh
  * 判断是否输入值为`NaN`
  * @example
- * import { isNaN } from 'mocoolka-predicate'
+ * import { isNaN } from 'macoolka-predicate'
  * assert(isNaN('a'))
  * assert(!isNaN(1));
  * @since 0.2.0
@@ -365,7 +365,7 @@ const $isNaN = (val: unknown) => val != val;
  * @desczh
  * 判断是否输入值为`isNumber`
  * @example
- * import { isObject } from 'mocoolka-predicate'
+ * import { isObject } from 'macoolka-predicate'
  * assert(isNumber(1))
  * assert(!isNumber('1'))
  * @since 0.2.0
@@ -378,13 +378,13 @@ export const isNumber: Refinement<unknown, number> = (a: unknown): a is number =
  * @desczh
  * 判断是否输入值为`Object`
  * @example
- * import { isObject } from 'mocoolka-predicate'
+ * import { isObject } from 'macoolka-predicate'
  * assert(isObject({}))
  * assert(isObject({ a: 1 }))
  * assert(!isObject(2))
  * @since 0.2.0
  */
-export const isObject = (a: unknown): a is { [name: string]: unknown } => 'Object' === getTypeName(a);
+export const isObject = (a: unknown): a is object => 'Object' === getTypeName(a);
 
 
 /**
@@ -392,7 +392,7 @@ export const isObject = (a: unknown): a is { [name: string]: unknown } => 'Objec
  * @desczh
  * 判断是否输入值为`RegExp`
  * @example
- * import { isRegExp } from 'mocoolka-predicate'
+ * import { isRegExp } from 'macoolka-predicate'
  * assert(isRegExp(/^a/))
  * assert(!isRegExp(1))
  * @since 0.2.0
@@ -403,7 +403,7 @@ export const isRegExp: Refinement<unknown, RegExp> = (a): a is RegExp => 'RegExp
  * @desczh
  * 判断是否输入值为相同类型
  * @example
- * import { isString } from 'mocoolka-predicate'
+ * import { isString } from 'macoolka-predicate'
  * 
  * assert(isSameType('a', '3'));
  * assert(isSameType({ a: 1 }, { b: 2 }));
@@ -418,7 +418,7 @@ export const isSameType = (a: unknown, b: unknown) => getTypeName(a) === getType
  * @desczh
  * 判断是否输入值是否为`string`
  * @example
- * import { isString } from 'mocoolka-predicate'
+ * import { isString } from 'macoolka-predicate'
  * assert(isString('a'))
  * assert(!isString(1))
  * 
@@ -437,7 +437,7 @@ const UNDEF: any = undefined;
  * @desczh
  * 判断是否输入值是否为`undefined`
  * @example
- * import { isUndefined } from 'mocoolka-predicate'
+ * import { isUndefined } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * 
  * assert(isUndefined(undefined))
@@ -451,7 +451,7 @@ export const isUndefined: Refinement<unknown, undefined> = (val): val is undefin
  * @desczh
  * 判断是否输入值是否为`null`
  * @example
- * import { isNull } from 'mocoolka-predicate'
+ * import { isNull } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(isNull(null))
  * assert(!isNull(undefined))
@@ -464,7 +464,7 @@ export const isNull = <T>(val: T | null): val is null => val === null;
  * @desczh
  * 判断是否输入值是否为`null`或者`undefined`
  * @example
- * import { isMaybe } from 'mocoolka-predicate'
+ * import { isMaybe } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * 
  * assert(isMaybe(undefined))
@@ -481,7 +481,7 @@ export function isMaybe<T>(value: Maybe<T>): value is (null | undefined) {
  * @desczh
  * 判断是否输入值不为`null`或者`undefined`
  * @example
- * import { notMaybe } from 'mocoolka-predicate'
+ * import { notMaybe } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(!notMaybe(undefined))
  * assert(!notMaybe(null))

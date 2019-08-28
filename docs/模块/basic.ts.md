@@ -1,7 +1,7 @@
 ---
-title: home/fastspeeed/mocoolka/core/mocoolka-predicate/src/basic.ts
-nav_order: 5
-parent: Modules
+title: basic.ts
+nav_order: 1
+parent: 模块
 ---
 
 # 概述
@@ -37,7 +37,7 @@ export const between = <A = number | string>({ low, hi }: { low: A, hi: A }) => 
 **示例**
 
 ```ts
-import { between } from 'mocoolka-predicate'
+import { between } from 'macoolka-predicate'
 assert(between({ hi: 'c', low: 'a' })('b'))
 assert(between({ hi: 'c', low: 'a' })('a'))
 assert(between({ hi: 'c', low: 'a' })('c'))
@@ -65,7 +65,7 @@ export const eq = <A = number | string | boolean>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { eq } from 'mocoolka-predicate'
+import { eq } from 'macoolka-predicate'
 assert(eq('a')('a'))
 assert(eq(1)(1))
 assert(eq(true)(true))
@@ -91,7 +91,7 @@ export const gt = <A = number | string>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { gt } from 'mocoolka-predicate'
+import { gt } from 'macoolka-predicate'
 assert(!gt('b')('a'))
 assert(!gt(2)(1))
 assert(!gt('a')('a'))
@@ -117,7 +117,7 @@ export const gte = <A = number | string>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { gte } from 'mocoolka-predicate'
+import { gte } from 'macoolka-predicate'
 assert(!gte('b')('a'))
 assert(!gte(2)(1))
 assert(gte('a')('a'))
@@ -143,7 +143,7 @@ export const lt = <A = number | string>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { lt } from 'mocoolka-predicate'
+import { lt } from 'macoolka-predicate'
 assert(lt('b')('a'))
 assert(lt(2)(1))
 assert(!lt('a')('a'))
@@ -169,7 +169,7 @@ export const lte = <A = number | string>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { lte } from 'mocoolka-predicate'
+import { lte } from 'macoolka-predicate'
 assert(lte('b')('a'))
 assert(lte(2)(1))
 assert(lte('a')('a'))
@@ -195,7 +195,7 @@ export const not_eq = <A = number | string | boolean>(y: A) => (x: A) => ...
 **示例**
 
 ```ts
-import { not_eq } from 'mocoolka-predicate'
+import { not_eq } from 'macoolka-predicate'
 assert(!not_eq('a')('a'))
 assert(!not_eq(1)(1))
 assert(!not_eq(true)(true))

@@ -17,7 +17,7 @@ const email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@(
  * @desczh
  * 判断文本长度是否小于等于输入的最大长度
  * @example
- * import { maxLength } from 'mocoolka-predicate'
+ * import { maxLength } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(maxLength(3)('123'))
  * assert(!maxLength(3)('1234'))
@@ -29,7 +29,7 @@ export const maxLength = (length: number) => (a: string) => a.length <= length
  * @desczh
  * 判断文本长度是否大于等于输入的最小长度
  * @example
- * import { minLength } from 'mocoolka-predicate'
+ * import { minLength } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(minLength(3)('123'))
  * assert(!minLength(3)('12'))
@@ -41,7 +41,7 @@ export const minLength = (length: number) => (a: string) => a.length >= length
  * @desczh
  * 判断文本是否匹配正则表达式
  * @example
- * import { match } from 'mocoolka-predicate'
+ * import { match } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(match(/^A/)('AB'))
  * assert(!match(/^A/)('12'))
@@ -53,7 +53,7 @@ export const match = (reg: RegExp) => (a: string) => reg.test(a)
  * @desczh
  * 判断文本是否为`Url`
  * @example
- * import { isUrl } from 'mocoolka-predicate'
+ * import { isUrl } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * expect(isUrl('http://bing.com'))
  * expect(!isUrl('8.8.8.8'))
@@ -65,7 +65,7 @@ export const isUrl = match(url)
  * @desczh
  * 判断文本是否为`IPV6`
  * @example
- * import { isIpV6 } from 'mocoolka-predicate'
+ * import { isIpV6 } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(isIpV6('2409:8a15:244a:a780:b0f5:8e9a:2c2e:5ce2'))
  * assert(!isIpV6('8.8.8.8'))
@@ -77,7 +77,7 @@ export const isIpV6 = match(ipV6)
  * @desczh
  * 判断文本是否为`UUID`
  * @example
- * import { isUrl } from 'mocoolka-predicate'
+ * import { isUrl } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(isUUID('00000000-0000-0000-0000-000000000000'))
  * assert(!isUUID('8.8.8.8'))
@@ -89,7 +89,7 @@ export const isUUID = match(UUID)
  * @param value
  * 判断文本是否为`Email`
  * @example
- * import { isEmail } from 'mocoolka-predicate'
+ * import { isEmail } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(isEmail('a@mail.com'))
  * assert(!isEmail('12'))
@@ -101,7 +101,7 @@ export const isEmail = match(email)
  * @param value
  * 判断文本是否为`IPV4`
  * @example
- * import { isIpV4 } from 'mocoolka-predicate'
+ * import { isIpV4 } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(isIpV4('8.8.8.8'))
  * assert(!isIpV4('12'))
@@ -114,7 +114,7 @@ export const isIpV4 = match(ipV4)
  * @param value
  * 判断文本是否以给定的字符结尾
  * @example
- * import { endsWith } from 'mocoolka-predicate'
+ * import { endsWith } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(endsWith('b')('ab'))
  * assert(endsWith('b')('ab1')===false);
@@ -128,7 +128,7 @@ export const endsWith = (suffix: string) => (str: string) => str.length >= suffi
  * @param value
  * 判断文本是否以给定的字符结尾,如果是，移除结尾字符
  * @example
- * import { endsWithOption } from 'mocoolka-predicate'
+ * import { endsWithOption } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * expect(endsWithOption('firstColorHover')('firstColorHover')).toEqual(some(''));
  * expect(endsWithOption('b')('ab')).toEqual(some('a'));
@@ -145,7 +145,7 @@ export const endsWithOption = (suffix: string) => (str: string) =>
  * @param value
  * 判断文本是否以给定的字符结尾.
  * @example
- * import { endsIn } from 'mocoolka-predicate'
+ * import { endsIn } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(endsIn(['start_with', 'end_with'])('a_start_with'))
  * assert(endsIn(['start_with', 'end_with'])('a_end_with'))
@@ -161,7 +161,7 @@ export const endsIn = (suffix: Array<string>) => (str: string) =>
  * @param value
  * 判断文本是否以给定的字符结尾,如果是，拆分给定的文本.
  * @example
- * import { endsInOption } from 'mocoolka-predicate'
+ * import { endsInOption } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(endsInOption(['_start_with', '_end_with'])('') == none);
  * expect(endsInOption(['_start_with', '_end_with'])('a_start_with')).toEqual(some({ start: 'a', end: '_start_with' }));
@@ -188,7 +188,7 @@ export const endsInOption = (suffix: Array<string>) => (str: string) => {
  * @param value
  * 判断文本是否没有以给定的字符结尾.
  * @example
- * import { notEndsWith } from 'mocoolka-predicate'
+ * import { notEndsWith } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(!notEndsWith('firstColorHover')('firstColorHover'))
  * assert(!notEndsWith('Hover')('firstColorHover'))
@@ -203,7 +203,7 @@ export const notEndsWith = (substring: string) => not(endsWith(substring))
  * @param value
  * 判断文本是否包含给定的字符.
  * @example
- * import { contains } from 'mocoolka-predicate'
+ * import { contains } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(contains('firstColorHover')('firstColorHover'));
  * assert(contains('Color')('firstColorHover'));
@@ -219,7 +219,7 @@ export const contains = (substring: string) => (str: string) =>
  * @param value
  * 判断文本是否在给定的数组中.
  * @example
- * import { ins } from 'mocoolka-predicate'
+ * import { ins } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(ins(['firstColorHover', 'b'])('firstColorHover'));
  * assert(!ins(['firstColorHover1', 'b'])('firstColorHover'))
@@ -234,7 +234,7 @@ export const ins = (v: Array<string>) => (str: string) =>
  * @param value
  * 判断文本是否不在给定的数组中.
  * @example
- * import { notIn } from 'mocoolka-predicate'
+ * import { notIn } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(!notIn(['firstColorHover', 'b'])('firstColorHover'))
  * assert(notIn(['firstColorHover1', 'b'])('firstColorHover'));
@@ -248,7 +248,7 @@ export const notIn = (a: Array<string>) => (str: string) =>
  * @param value
  * 判断文本是否不包含给定的字符.
  * @example
- * import { notContains } from 'mocoolka-predicate'
+ * import { notContains } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(!notContains('firstColorHover')('firstColorHover'))
  * assert(!notContains('Color')('firstColorHover'))
@@ -262,7 +262,7 @@ export const notContains = (substring: string) => not(contains(substring))
  * @param value
  * 判断文本是否以给定的字符开头
  * @example
- * import { startsWith } from 'mocoolka-predicate'
+ * import { startsWith } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(startsWith('a')('ab'));
  * assert(startsWith('a')('ba')===false);
@@ -279,7 +279,7 @@ export const startsWith = (suffix: string) => (str: string) => {
  * @param value
  * 判断文本是否不以给定的字符开头
  * @example
- * import { notStartsWith } from 'mocoolka-predicate'
+ * import { notStartsWith } from 'macoolka-predicate'
  * import * as assert from 'assert'
  * assert(notStartsWith('firstColorHove')('firstColorHover')===false);
  * assert(notStartsWith('b')('firstColorHover'));

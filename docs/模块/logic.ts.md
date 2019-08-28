@@ -1,30 +1,30 @@
 ---
-title: home/fastspeeed/mocoolka/core/mocoolka-predicate/src/logic.ts
+title: logic.ts
 nav_order: 2
-parent: Modules
+parent: 模块
 ---
 
-# Overview
+# 概述
 
-Logic function about predicate
-
----
-
-<h2 class="text-delta">Table of contents</h2>
-
-- [and (function)](#and-function)
-- [foldAND (function)](#foldand-function)
-- [foldOR (function)](#foldor-function)
-- [not (function)](#not-function)
-- [or (function)](#or-function)
+逻辑函数
 
 ---
 
-# and (function)
+<h2 class="text-delta">目录</h2>
 
-Concat Predicate with and
+- [and (函数)](#and-%E5%87%BD%E6%95%B0)
+- [foldAND (函数)](#foldand-%E5%87%BD%E6%95%B0)
+- [foldOR (函数)](#foldor-%E5%87%BD%E6%95%B0)
+- [not (函数)](#not-%E5%87%BD%E6%95%B0)
+- [or (函数)](#or-%E5%87%BD%E6%95%B0)
 
-**Signature**
+---
+
+# and (函数)
+
+用`and`连接`Predicate`
+
+**签名**
 
 ```ts
 
@@ -32,10 +32,10 @@ export const and = <A>(p1: Predicate<A>, p2: Predicate<A>): Predicate<A> => ...
 
 ```
 
-**Example**
+**示例**
 
 ```ts
-import { and } from 'mocoolka-predicate'
+import { and } from 'macoolka-predicate'
 interface A {
   name: string
   age: number
@@ -46,13 +46,13 @@ const isAge = (a: A) => a.age === 20
 expect(as.filter(and(isName, isAge)).length).toEqual(1)
 ```
 
-Added in v0.2.0
+v0.2.0 中添加
 
-# foldAND (function)
+# foldAND (函数)
 
-fold Predicate with and
+`fold` `Predicate` 数组用`and`
 
-**Signature**
+**签名**
 
 ```ts
 
@@ -60,10 +60,10 @@ export const foldAND = <A>(p: Array<Predicate<A>>): Predicate<A> => ...
 
 ```
 
-**Example**
+**示例**
 
 ```ts
-import { foldAND } from 'mocoolka-predicate'
+import { foldAND } from 'macoolka-predicate'
 interface A {
   name: string
   age: number
@@ -74,13 +74,13 @@ const isAge = (a: A) => a.age === 20
 expect(as.filter(foldAND([isName, isAge])).length).toEqual(1)
 ```
 
-Added in v0.2.0
+v0.2.0 中添加
 
-# foldOR (function)
+# foldOR (函数)
 
-fold Predicate with or
+`fold` `Predicate` 数组用`or`
 
-**Signature**
+**签名**
 
 ```ts
 
@@ -88,10 +88,10 @@ export const foldOR = <A>(p: Array<Predicate<A>>): Predicate<A> => ...
 
 ```
 
-**Example**
+**示例**
 
 ```ts
-import { foldOR } from 'mocoolka-predicate'
+import { foldOR } from 'macoolka-predicate'
 interface A {
   name: string
   age: number
@@ -102,16 +102,16 @@ const isAge = (a: A) => a.age === 20
 expect(as.filter(foldOR([isName, isAge])).length).toEqual(2)
 ```
 
-Added in v0.2.0
+v0.2.0 中添加
 
-# not (function)
+# not (函数)
 
-not a Predicate
+`Predicate`结果取反
 
-**Example**
+**示例**
 
 ```ts
-import { and } from 'mocoolka-predicate'
+import { and } from 'macoolka-predicate'
 interface A {
   name: string
   age: number
@@ -122,16 +122,16 @@ const isAge = (a: A) => a.age === 20
 expect(as.filter(and(isName, isAge)).length).toEqual(1)
 ```
 
-Added in v0.2.0
+v0.2.0 中添加
 
-# or (function)
+# or (函数)
 
-Concat Predicate with or
+用`or`连接`Predicate`
 
-**Example**
+**示例**
 
 ```ts
-import { or } from 'mocoolka-predicate'
+import { or } from 'macoolka-predicate'
 interface A {
   name: string
   age: number
@@ -142,4 +142,4 @@ const isAge = (a: A) => a.age === 20
 expect(as.filter(or(isName, isAge)).length).toEqual(2)
 ```
 
-Added in v0.2.0
+v0.2.0 中添加

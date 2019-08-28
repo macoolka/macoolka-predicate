@@ -1,7 +1,7 @@
 ---
-title: home/fastspeeed/mocoolka/core/mocoolka-predicate/src/string.ts
-nav_order: 7
-parent: Modules
+title: string.ts
+nav_order: 3
+parent: 模块
 ---
 
 # 概述
@@ -49,7 +49,7 @@ export const isEmail: (a: string) => boolean = ...
 **示例**
 
 ```ts
-import { isEmail } from 'mocoolka-predicate'
+import { isEmail } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(isEmail('a@mail.com'))
 assert(!isEmail('12'))
@@ -72,7 +72,7 @@ export const isIpV4: (a: string) => boolean = ...
 **示例**
 
 ```ts
-import { isIpV4 } from 'mocoolka-predicate'
+import { isIpV4 } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(isIpV4('8.8.8.8'))
 assert(!isIpV4('12'))
@@ -95,7 +95,7 @@ export const isIpV6: (a: string) => boolean = ...
 **示例**
 
 ```ts
-import { isIpV6 } from 'mocoolka-predicate'
+import { isIpV6 } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(isIpV6('2409:8a15:244a:a780:b0f5:8e9a:2c2e:5ce2'))
 assert(!isIpV6('8.8.8.8'))
@@ -118,7 +118,7 @@ export const isUUID: (a: string) => boolean = ...
 **示例**
 
 ```ts
-import { isUrl } from 'mocoolka-predicate'
+import { isUrl } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(isUUID('00000000-0000-0000-0000-000000000000'))
 assert(!isUUID('8.8.8.8'))
@@ -141,7 +141,7 @@ export const isUrl: (a: string) => boolean = ...
 **示例**
 
 ```ts
-import { isUrl } from 'mocoolka-predicate'
+import { isUrl } from 'macoolka-predicate'
 import * as assert from 'assert'
 expect(isUrl('http://bing.com'))
 expect(!isUrl('8.8.8.8'))
@@ -164,7 +164,7 @@ export const contains = (substring: string) => (str: string) => ...
 **示例**
 
 ```ts
-import { contains } from 'mocoolka-predicate'
+import { contains } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(contains('firstColorHover')('firstColorHover'))
 assert(contains('Color')('firstColorHover'))
@@ -191,7 +191,7 @@ export const endsIn = (suffix: Array<string>) => (str: string) =>
 **示例**
 
 ```ts
-import { endsIn } from 'mocoolka-predicate'
+import { endsIn } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(endsIn(['start_with', 'end_with'])('a_start_with'))
 assert(endsIn(['start_with', 'end_with'])('a_end_with'))
@@ -217,7 +217,7 @@ export const endsInOption = (suffix: Array<string>) => (str: string) => ...
 **示例**
 
 ```ts
-import { endsInOption } from 'mocoolka-predicate'
+import { endsInOption } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(endsInOption(['_start_with', '_end_with'])('') == none)
 expect(endsInOption(['_start_with', '_end_with'])('a_start_with')).toEqual(some({ start: 'a', end: '_start_with' }))
@@ -242,7 +242,7 @@ export const endsWith = (suffix: string) => (str: string) => ...
 **示例**
 
 ```ts
-import { endsWith } from 'mocoolka-predicate'
+import { endsWith } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(endsWith('b')('ab'))
 assert(endsWith('b')('ab1') === false)
@@ -266,7 +266,7 @@ export const endsWithOption = (suffix: string) => (str: string) => ...
 **示例**
 
 ```ts
-import { endsWithOption } from 'mocoolka-predicate'
+import { endsWithOption } from 'macoolka-predicate'
 import * as assert from 'assert'
 expect(endsWithOption('firstColorHover')('firstColorHover')).toEqual(some(''))
 expect(endsWithOption('b')('ab')).toEqual(some('a'))
@@ -291,7 +291,7 @@ export const ins = (v: Array<string>) => (str: string) => ...
 
 ```ts
 
-import { ins } from 'mocoolka-predicate'
+import { ins } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(ins(['firstColorHover', 'b'])('firstColorHover'));
 assert(!ins(['firstColorHover1', 'b'])('firstColorHover'))
@@ -316,7 +316,7 @@ export const match = (reg: RegExp) => (a: string) => ...
 **示例**
 
 ```ts
-import { match } from 'mocoolka-predicate'
+import { match } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(match(/^A/)('AB'))
 assert(!match(/^A/)('12'))
@@ -339,7 +339,7 @@ export const maxLength = (length: number) => (a: string) => ...
 **示例**
 
 ```ts
-import { maxLength } from 'mocoolka-predicate'
+import { maxLength } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(maxLength(3)('123'))
 assert(!maxLength(3)('1234'))
@@ -362,7 +362,7 @@ export const minLength = (length: number) => (a: string) => ...
 **示例**
 
 ```ts
-import { minLength } from 'mocoolka-predicate'
+import { minLength } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(minLength(3)('123'))
 assert(!minLength(3)('12'))
@@ -385,7 +385,7 @@ export const notContains = (substring: string) => ...
 **示例**
 
 ```ts
-import { notContains } from 'mocoolka-predicate'
+import { notContains } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(!notContains('firstColorHover')('firstColorHover'))
 assert(!notContains('Color')('firstColorHover'))
@@ -409,7 +409,7 @@ export const notEndsWith = (substring: string) => ...
 **示例**
 
 ```ts
-import { notEndsWith } from 'mocoolka-predicate'
+import { notEndsWith } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(!notEndsWith('firstColorHover')('firstColorHover'))
 assert(!notEndsWith('Hover')('firstColorHover'))
@@ -433,7 +433,7 @@ export const notIn = (a: Array<string>) => (str: string) => ...
 **示例**
 
 ```ts
-import { notIn } from 'mocoolka-predicate'
+import { notIn } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(!notIn(['firstColorHover', 'b'])('firstColorHover'))
 assert(notIn(['firstColorHover1', 'b'])('firstColorHover'))
@@ -456,7 +456,7 @@ export const notStartsWith = (substring: string) => ...
 **示例**
 
 ```ts
-import { notStartsWith } from 'mocoolka-predicate'
+import { notStartsWith } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(notStartsWith('firstColorHove')('firstColorHover') === false)
 assert(notStartsWith('b')('firstColorHover'))
@@ -479,7 +479,7 @@ export const startsWith = (suffix: string) => (str: string) => ...
 **示例**
 
 ```ts
-import { startsWith } from 'mocoolka-predicate'
+import { startsWith } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(startsWith('a')('ab'))
 assert(startsWith('a')('ba') === false)

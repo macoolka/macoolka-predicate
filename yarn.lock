@@ -2262,6 +2262,11 @@ loose-envify@^1.0.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+macoolka-typescript@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/macoolka-typescript/-/macoolka-typescript-0.2.1.tgz#582c51eb262755672bdba8ab0a81f41f340174ac"
+  integrity sha512-LrttuIWiqNviB+2JSES2IrqtXsDimM6sF43AN9j/QSXfPcd4/BPjaqM6ZWh+cvWWW7bdXr23MkwUhAMb9VlfZg==
+
 make-dir@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"

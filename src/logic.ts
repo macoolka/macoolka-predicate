@@ -12,7 +12,7 @@ import { monoidAny, getFunctionMonoid, monoidAll, fold } from 'fp-ts/lib/Monoid'
  * @desczh
  * 用`and`连接`Predicate`
  * @example
- * import {and} from 'mocoolka-predicate'
+ * import {and} from 'macoolka-predicate'
  * interface A {
  *   name: string,
  *   age: number
@@ -37,7 +37,7 @@ export const and = <A>(p1: Predicate<A>, p2: Predicate<A>): Predicate<A> => {
  * @desczh
  * 用`or`连接`Predicate`
  * @example
- * import {or} from 'mocoolka-predicate'
+ * import {or} from 'macoolka-predicate'
  * interface A {
  *   name: string,
  *   age: number
@@ -65,7 +65,7 @@ export function or<A>(p1: Predicate<A>, p2: Predicate<A>): Predicate<A> {
  * @desczh
  * `fold` `Predicate` 数组用`and`
  * @example
- * import {foldAND} from 'mocoolka-predicate'
+ * import {foldAND} from 'macoolka-predicate'
  * interface A {
  *   name: string,
  *   age: number
@@ -92,7 +92,7 @@ export const foldAND = <A>(p: Array<Predicate<A>>): Predicate<A> => {
  * @desczh
  * `fold` `Predicate` 数组用`or`
  * @example
- * import {foldOR} from 'mocoolka-predicate'
+ * import {foldOR} from 'macoolka-predicate'
  * interface A {
  *   name: string,
  *   age: number
@@ -119,7 +119,7 @@ export const foldOR = <A>(p: Array<Predicate<A>>): Predicate<A> => {
  * @desczh
  * `Predicate`结果取反
  * @example
- * import {and} from 'mocoolka-predicate'
+ * import {and} from 'macoolka-predicate'
  * interface A {
  *   name: string,
  *   age: number

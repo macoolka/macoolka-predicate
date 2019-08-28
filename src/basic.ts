@@ -12,7 +12,7 @@
  * @desczh
  * 相等
  * @example
- * import {eq} from 'mocoolka-predicate'
+ * import {eq} from 'macoolka-predicate'
  * assert(eq('a')('a'))
  * assert(eq(1)(1))
  * assert(eq(true)(true))
@@ -27,7 +27,7 @@ export const eq = <A = number | string | boolean>(y: A) => (x: A) => x === y
  * @desczh
  * 不相等
  * @example
- * import {not_eq} from 'mocoolka-predicate'
+ * import {not_eq} from 'macoolka-predicate'
  * assert(!not_eq('a')('a'))
  * assert(!not_eq(1)(1))
  * assert(!not_eq(true)(true))
@@ -42,7 +42,7 @@ export const not_eq = <A = number | string | boolean>(y: A) => (x: A) => x !== y
  * @desczh
  * 小于
  * @example
- * import {lt} from 'mocoolka-predicate'
+ * import {lt} from 'macoolka-predicate'
  * assert(lt('b')('a'))
  * assert(lt(2)(1))
  * assert(!lt('a')('a'))
@@ -57,7 +57,7 @@ export const lt = <A = number | string>(y: A) => (x: A) => x < y
  * @desczh
  * 大于
  * @example
- * import {gt} from 'mocoolka-predicate'
+ * import {gt} from 'macoolka-predicate'
  * assert(!gt('b')('a'))
  * assert(!gt(2)(1))
  * assert(!gt('a')('a'))
@@ -72,7 +72,7 @@ export const gt = <A = number | string>(y: A) => (x: A) => x > y
  * @desczh
  * 小于等于
  * @example
- * import {lte} from 'mocoolka-predicate'
+ * import {lte} from 'macoolka-predicate'
  * assert(lte('b')('a'))
  * assert(lte(2)(1))
  * assert(lte('a')('a'))
@@ -87,7 +87,7 @@ export const lte = <A = number | string>(y: A) => (x: A) => x <= y
  * @desczh
  * 大于等于
  * @example
- * import {gte} from 'mocoolka-predicate'
+ * import {gte} from 'macoolka-predicate'
  * assert(!gte('b')('a'))
  * assert(!gte(2)(1))
  * assert(gte('a')('a'))
@@ -102,7 +102,7 @@ export const gte = <A = number | string>(y: A) => (x: A) => x >= y
  * @desczh
  * 大于等于low，小于等于hi
  * @example
- * import {between} from 'mocoolka-predicate'
+ * import {between} from 'macoolka-predicate'
  * assert(between({ hi: 'c', low: 'a' })('b'))
  * assert(between({ hi: 'c', low: 'a' })('a'))
  * assert(between({ hi: 'c', low: 'a' })('c'))

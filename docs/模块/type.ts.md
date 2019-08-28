@@ -1,7 +1,7 @@
 ---
-title: home/fastspeeed/mocoolka/core/mocoolka-predicate/src/type.ts
-nav_order: 8
-parent: Modules
+title: type.ts
+nav_order: 4
+parent: 模块
 ---
 
 # 概述
@@ -84,7 +84,7 @@ export const getTypeName = (value: unknown): string => ...
 **示例**
 
 ```ts
-import { getTypeName } from 'mocoolka-predicate'
+import { getTypeName } from 'macoolka-predicate'
 assert(getTypeName({}) === 'Object')
 ```
 
@@ -105,7 +105,7 @@ export const isArray = <T>(a: unknown): a is Array<T> => ...
 **示例**
 
 ```ts
-import { isArray } from 'mocoolka-predicate'
+import { isArray } from 'macoolka-predicate'
 
 assert(isArray([]))
 assert(!isArray({}))
@@ -128,7 +128,7 @@ export const isArrayLike = (value: any) => ...
 **示例**
 
 ```ts
-import { isArrayLike } from 'mocoolka-predicate'
+import { isArrayLike } from 'macoolka-predicate'
 assert(isArrayLike([]))
 assert(isArrayLike({ length: 8 }))
 assert(!isArrayLike({}))
@@ -152,7 +152,7 @@ export const isBoolean: Refinement<unknown, boolean> =
 **示例**
 
 ```ts
-import { isBoolean } from 'mocoolka-predicate'
+import { isBoolean } from 'macoolka-predicate'
 assert(isBoolean(true))
 assert(!isBoolean(1))
 ```
@@ -174,7 +174,7 @@ export const isDate: Refinement<unknown, Date> = (a: unknown): a is Date => ...
 **示例**
 
 ```ts
-import { isDate } from 'mocoolka-predicate'
+import { isDate } from 'macoolka-predicate'
 assert(isDate(new Date()))
 assert(!isDate('a'))
 ```
@@ -188,7 +188,7 @@ v0.2.0 中添加
 **示例**
 
 ```ts
-import { isEmpty } from 'mocoolka-predicate'
+import { isEmpty } from 'macoolka-predicate'
 assert(isEmpty(''))
 assert(isEmpty(undefined))
 assert(isEmpty(null))
@@ -215,7 +215,7 @@ export const isEmptyArray = (val: unknown): boolean => ...
 **示例**
 
 ```ts
-import { isEmptyArray } from 'mocoolka-predicate'
+import { isEmptyArray } from 'macoolka-predicate'
 assert(isEmptyArray([]))
 assert(isEmptyArray(undefined))
 assert(isEmptyArray(null))
@@ -239,7 +239,7 @@ export const isEmptyRecord = (val: unknown): boolean => ...
 **示例**
 
 ```ts
-import { isEmptyRecord } from 'mocoolka-predicate'
+import { isEmptyRecord } from 'macoolka-predicate'
 assert(isEmptyRecord({}))
 assert(isEmptyRecord(undefined))
 assert(isEmptyRecord(null))
@@ -264,7 +264,7 @@ export const isError: Refinement<unknown, Error> =
 **示例**
 
 ```ts
-import { isError } from 'mocoolka-predicate'
+import { isError } from 'macoolka-predicate'
 assert(isError(new Error('')))
 assert(!isError(''))
 ```
@@ -286,7 +286,7 @@ export const isFinite: Predicate<unknown> = (val) => ...
 **示例**
 
 ```ts
-import { isFinite } from 'mocoolka-predicate'
+import { isFinite } from 'macoolka-predicate'
 assert(isFinite(Number.MAX_VALUE))
 assert(isFinite(Number.MIN_VALUE))
 assert(isFinite('1'))
@@ -311,7 +311,7 @@ export const isFunction: Refinement<unknown, Function> =
 **示例**
 
 ```ts
-import { isFunction } from 'mocoolka-predicate'
+import { isFunction } from 'macoolka-predicate'
 assert(isFunction(() => void 0))
 assert(!isFunction(1))
 ```
@@ -333,7 +333,7 @@ export const isInteger: Predicate<unknown> = (val: unknown) => ...
 **示例**
 
 ```ts
-import { isInteger } from 'mocoolka-predicate'
+import { isInteger } from 'macoolka-predicate'
 assert(isInteger(1))
 assert(!isInteger(1.1))
 ```
@@ -356,7 +356,7 @@ export const isIterable: Refinement<unknown, Iterable<unknown>> =
 **示例**
 
 ```ts
-import { isIterable } from 'mocoolka-predicate'
+import { isIterable } from 'macoolka-predicate'
 assert(isIterable([]))
 assert(!isIterable({}))
 ```
@@ -379,7 +379,7 @@ export const isIterator: Refinement<any, Iterator<unknown>> =
 **示例**
 
 ```ts
-import { isIterator } from 'mocoolka-predicate'
+import { isIterator } from 'macoolka-predicate'
 assert(isIterator({ next: () => void 0 }))
 assert(!isIterator({}))
 ```
@@ -393,7 +393,7 @@ v0.2.0 中添加
 **示例**
 
 ```ts
-import { isMaybe } from 'mocoolka-predicate'
+import { isMaybe } from 'macoolka-predicate'
 import * as assert from 'assert'
 
 assert(isMaybe(undefined))
@@ -418,7 +418,7 @@ export const isNaN = (val: unknown) => ...
 **示例**
 
 ```ts
-import { isNaN } from 'mocoolka-predicate'
+import { isNaN } from 'macoolka-predicate'
 assert(isNaN('a'))
 assert(!isNaN(1))
 ```
@@ -440,7 +440,7 @@ export const isNull = <T>(val: T | null): val is null => ...
 **示例**
 
 ```ts
-import { isNull } from 'mocoolka-predicate'
+import { isNull } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(isNull(null))
 assert(!isNull(undefined))
@@ -463,7 +463,7 @@ export const isNumber: Refinement<unknown, number> = (a: unknown): a is number =
 **示例**
 
 ```ts
-import { isObject } from 'mocoolka-predicate'
+import { isObject } from 'macoolka-predicate'
 assert(isNumber(1))
 assert(!isNumber('1'))
 ```
@@ -478,14 +478,14 @@ v0.2.0 中添加
 
 ```ts
 
-export const isObject = (a: unknown): a is { [name: string]: unknown } => ...
+export const isObject = (a: unknown): a is object => ...
 
 ```
 
 **示例**
 
 ```ts
-import { isObject } from 'mocoolka-predicate'
+import { isObject } from 'macoolka-predicate'
 assert(isObject({}))
 assert(isObject({ a: 1 }))
 assert(!isObject(2))
@@ -508,7 +508,7 @@ export const isRegExp: Refinement<unknown, RegExp> = (a): a is RegExp => ...
 **示例**
 
 ```ts
-import { isRegExp } from 'mocoolka-predicate'
+import { isRegExp } from 'macoolka-predicate'
 assert(isRegExp(/^a/))
 assert(!isRegExp(1))
 ```
@@ -530,7 +530,7 @@ export const isSameType = (a: unknown, b: unknown) => ...
 **示例**
 
 ```ts
-import { isString } from 'mocoolka-predicate'
+import { isString } from 'macoolka-predicate'
 
 assert(isSameType('a', '3'))
 assert(isSameType({ a: 1 }, { b: 2 }))
@@ -555,7 +555,7 @@ export const isString: Refinement<unknown, string> = (a: unknown): a is string =
 **示例**
 
 ```ts
-import { isString } from 'mocoolka-predicate'
+import { isString } from 'macoolka-predicate'
 assert(isString('a'))
 assert(!isString(1))
 ```
@@ -578,7 +578,7 @@ export const isSymbol: Refinement<unknown, symbol> =
 **示例**
 
 ```ts
-import { isSymbol } from 'mocoolka-predicate'
+import { isSymbol } from 'macoolka-predicate'
 const a = Symbol('A')
 assert(isSymbol(a))
 assert(!isSymbol('b'))
@@ -602,7 +602,7 @@ export const isTypeName = <T>(strTypeName: string): Refinement<unknown, T> =>
 **示例**
 
 ```ts
-import { isTypeName } from 'mocoolka-predicate'
+import { isTypeName } from 'macoolka-predicate'
 assert(isTypeName('Object')({}))
 ```
 
@@ -623,7 +623,7 @@ export const isUndefined: Refinement<unknown, undefined> = (val): val is undefin
 **示例**
 
 ```ts
-import { isUndefined } from 'mocoolka-predicate'
+import { isUndefined } from 'macoolka-predicate'
 import * as assert from 'assert'
 
 assert(isUndefined(undefined))
@@ -639,7 +639,7 @@ v0.2.0 中添加
 **示例**
 
 ```ts
-import { notEmpty } from 'mocoolka-predicate'
+import { notEmpty } from 'macoolka-predicate'
 assert(!notEmpty(''))
 assert(!notEmpty(undefined))
 assert(!notEmpty(null))
@@ -666,7 +666,7 @@ export const notEmptyArray = <T>(val: unknown): val is NonEmptyArray<T> => ...
 **示例**
 
 ```ts
-import { notEmptyArray } from 'mocoolka-predicate'
+import { notEmptyArray } from 'macoolka-predicate'
 assert(!notEmptyArray([]))
 assert(!notEmptyArray(undefined))
 assert(!notEmptyArray(null))
@@ -690,7 +690,7 @@ export const notEmptyRecord = <T>(val: Maybe<T>): val is AtLeastOne<T> => ...
 **示例**
 
 ```ts
-import { notEmptyRecord } from 'mocoolka-predicate'
+import { notEmptyRecord } from 'macoolka-predicate'
 assert(!notEmptyRecord({}))
 assert(!notEmptyRecord(undefined))
 assert(!notEmptyRecord(null))
@@ -706,7 +706,7 @@ v0.2.0 中添加
 **示例**
 
 ```ts
-import { notMaybe } from 'mocoolka-predicate'
+import { notMaybe } from 'macoolka-predicate'
 import * as assert from 'assert'
 assert(!notMaybe(undefined))
 assert(!notMaybe(null))
