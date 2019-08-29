@@ -39,8 +39,8 @@ npm install macoolka-predicate
 # Documentation
 
 - [Docs](https://macoolka.github.io/macoolka-predicate)
-- [API Reference](https://macoolka.github.io/macoolka-predicate/modules)
-- [API Reference (中文)](https://macoolka.github.io/macoolka-predicate/zh/modules)
+- [API Reference](https://macoolka.github.io/macoolka-predicate/docs/Modules)
+- [API Reference (中文)](https://macoolka.github.io/macoolka-predicate/docs/模块)
 
 
 # License
